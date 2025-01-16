@@ -1,11 +1,11 @@
 function something()
 {
 	
-	x = window.localStorage.getItem('bbb');
+	x = window.localStorage.getItem('bbb'); // x = hh['bbb'], string type
 
-	x = x * 1 + 1;
+	x = x * 1 + 1; // x = x + 1, * 1 - simple method to do type string into type integer
 	
-	window.localStorage.setItem('bbb', x);
+	window.localStorage.setItem('bbb', x); // hh['bbb'] = x
 
 	alert(x);
 }
