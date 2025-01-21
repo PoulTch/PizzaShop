@@ -39,3 +39,21 @@ function cart_get_number_of_items()
 
 	return cnt;
 }
+
+function cart_get_orders()
+{
+	var orders = '';
+
+	for(var i = 0; i < window.localStorage.length; i++)
+	{
+		var key = window.localStorage.key(i); // get key
+		var value = window.localStorage.getItem(key); // get value, in Ruby is hh['key'] = x
+
+		if(key.indexOf('product_') == 0)
+		{
+			orders = orders + key + '=' + value + ',';
+		}
+	}
+
+	return orders;
+}
