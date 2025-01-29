@@ -11,6 +11,11 @@ end
 
 class Order < ActiveRecord::Base
 end
+
+before do                     
+	@o = Order.new	
+end	                      
+
 	
 get '/' do
 	@products = Product.all
@@ -19,6 +24,15 @@ end
 
 get '/about' do
 	erb :about			
+end
+
+get '/cart' do	
+	erb :cart
+end
+
+post '/place_order' do
+	@o = Order.create params[:order]	               	                                               
+    erb :order_placed                                                                                                             
 end
 
 post '/cart' do
@@ -51,4 +65,4 @@ def parse_orders_input orders_input
 	end
 
 	return arr
-end                                           
+end 
