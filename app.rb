@@ -30,6 +30,10 @@ get '/cart' do
 	erb :cart
 end
 
+get '/admin' do
+	erb :admin
+end
+
 post '/place_order' do
 	@o = Order.create params[:order]	               	                                               
     erb :order_placed                                                                                                             
