@@ -31,6 +31,7 @@ get '/cart' do
 end
 
 get '/admin' do
+	@list_of_order = Order.order('created_at DESC')
 	erb :admin
 end
 

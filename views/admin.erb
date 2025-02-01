@@ -1,1 +1,8 @@
 <h2>Orders list</h2>
+<br>
+<% @list_of_order.each do |order| %>                                           
+	<p>                                                               
+		<%= order.orders_input%> <%= order.name %>, <%= order.phone %>, <%= order.address %>, <%= order.created_at %>  
+	</p>
+	<br>                                                              
+<% end %>                                                                 
